@@ -1,0 +1,55 @@
+{
+	"name" : "BlackBox Templates",
+	"scopeName" : "text.html.blackbox",
+	"fileTypes" : ["tpl"],
+	"patterns" : [
+		{
+			"include" : "text.html.basic"
+		},
+
+		{
+			"include" : "source.php"
+		},
+
+		{
+			"name" : "variable.blackbox",
+			"match" : "{(foreach|while|if|elseif|for|switch|case|include|section|yield|extend)\\((.+)\\)}",
+			"captures" : {
+				"1" : { "name" : "support.constant" }
+			}
+		},
+
+		{
+			"match" : "{(else|default|break|continue)}",
+			"name"	: "variable.blackbox",
+			"captures" : {
+				"1" : { "name" : "support.constant" }
+			}
+		},
+
+		{
+			"match" : "{(define)\\((.+), (.+)\\)}",
+			"name" : "variable.blackbox",
+			"captures" : {
+				"1" : { "name" : "support.constant.blackbox"} ,
+				"3" : { "name" : "string.blackbox" }
+			}
+		},
+
+		{
+			"match" : "{/(foreach|while|if|for|switch|case|default|section)}",
+			"name"	: "variable.blackbox",
+			"captures" : {
+				"1" : { "name" : "support.constant.blackbox" }
+			}
+		},
+
+		{
+			"match" : "{{(.+?)}}",
+			"name"	: "variable.blackbox",
+			"captures" : {
+				"2" : { "name" : "support.constant.blackbox" }
+			}
+		}
+	]
+}

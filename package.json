@@ -1,0 +1,12 @@
+{
+  "name": "blackbox-atom",
+  "version": "0.1.0",
+  "description": "BlackBox Framework highlighting and snippets for Atom",
+  "repository": "https://github.com/blackboxframework/blackbox-atom",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
